@@ -40,6 +40,9 @@ const BillingModule = () => {
     category: 'breakfast'
   });
 
+  // Success message state
+  const [successMessage, setSuccessMessage] = useState('');
+
   // Initialize local menu data
   useEffect(() => {
     setLocalMenuData(menuData);
@@ -194,8 +197,9 @@ Professional POS Solution
       [newItem.category]: [...(prev[newItem.category] || []), newItemWithId]
     }));
     
-    // In a real app, this would save to database
-    alert(`Item "${newItem.name}" added successfully! (This is a demo - in production, items would be saved to database)`);
+    // Show temporary success message
+    setSuccessMessage(`"${newItem.name}" added to menu`);
+    setTimeout(() => setSuccessMessage(''), 3000);
     
     // Reset form
     setNewItem({ name: '', price: '', category: 'breakfast' });
@@ -228,8 +232,9 @@ Professional POS Solution
       )
     }));
     
-    // In a real app, this would update the database
-    alert(`Item "${newItem.name}" updated successfully! (This is a demo - in production, items would be updated in database)`);
+    // Show temporary success message
+    setSuccessMessage(`"${newItem.name}" updated in menu`);
+    setTimeout(() => setSuccessMessage(''), 3000);
     
     // Reset form
     setNewItem({ name: '', price: '', category: 'breakfast' });
@@ -245,8 +250,9 @@ Professional POS Solution
         [item.category]: prev[item.category].filter(menuItem => menuItem.id !== item.id)
       }));
       
-      // In a real app, this would delete from database
-      alert(`Item "${item.name}" deleted successfully! (This is a demo - in production, items would be deleted from database)`);
+      // Show temporary success message
+      setSuccessMessage(`"${item.name}" removed from menu`);
+      setTimeout(() => setSuccessMessage(''), 3000);
     }
   };
 
@@ -449,6 +455,16 @@ Professional POS Solution
 
   const renderMenuManagementTab = () => (
     <div className="space-y-6">
+      {/* Success Message */}
+      {successMessage && (
+        <div className="card p-4 bg-green-50 border border-green-200">
+          <div className="flex items-center space-x-2 text-green-700">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="font-medium">{successMessage}</span>
+          </div>
+        </div>
+      )}
+
       {/* GST Settings */}
       <div className="card p-6">
         <div className="flex items-center justify-between mb-4">
@@ -478,7 +494,10 @@ Professional POS Solution
           </div>
           <div className="flex items-end">
             <button
-              onClick={() => alert(`GST rate updated to ${gstRate}%! (This is a demo - in production, this would be saved to database)`)}
+              onClick={() => {
+                setSuccessMessage(`GST rate updated to ${gstRate}%`);
+                setTimeout(() => setSuccessMessage(''), 3000);
+              }}
               className="btn-primary px-6 py-3"
             >
               Update GST Rate
