@@ -145,6 +145,84 @@ Phone: +91 9505009699
         </p>
       </div>
 
+      {/* Comparative Study */}
+      <div className="card p-6 mb-8 bg-green-50 border-green-200">
+        <h3 className="text-xl font-bold text-green-800 mb-4 text-center">Comparative Study – Other Companies vs. Our Service</h3>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-green-200">
+                <th className="text-left py-3 px-4 font-semibold text-green-800">Factor</th>
+                <th className="text-center py-3 px-4 font-semibold text-red-600">Other Companies</th>
+                <th className="text-center py-3 px-4 font-semibold text-green-600">Our Software</th>
+                <th className="text-center py-3 px-4 font-semibold text-blue-600">Why Client Saves with Us</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-green-100">
+                <td className="py-3 px-4 font-medium text-green-800">Internet Dependence</td>
+                <td className="text-center py-3 px-4 text-red-600">Needs 24×7 internet (extra ₹1,000–₹2,000/month for broadband + backup dongle).</td>
+                <td className="text-center py-3 px-4 text-green-600">Works fully offline. Only power needed.</td>
+                <td className="text-center py-3 px-4 text-blue-600">💰 Saves monthly internet costs + no downtime if internet fails.</td>
+              </tr>
+              <tr className="border-b border-green-100">
+                <td className="py-3 px-4 font-medium text-green-800">Pricing Model</td>
+                <td className="text-center py-3 px-4 text-red-600">Subscription (₹1,200–₹6,000/month) + setup fees.</td>
+                <td className="text-center py-3 px-4 text-green-600">One-time software cost (lifetime).</td>
+                <td className="text-center py-3 px-4 text-blue-600">💰 No recurring subscription — lifetime savings.</td>
+              </tr>
+              <tr className="border-b border-green-100">
+                <td className="py-3 px-4 font-medium text-green-800">Maintenance</td>
+                <td className="text-center py-3 px-4 text-red-600">Cloud/server issues → depend on vendor support.</td>
+                <td className="text-center py-3 px-4 text-green-600">Simple local software, Excel-based backend → easy to maintain.</td>
+                <td className="text-center py-3 px-4 text-blue-600">💰 Less dependency, owner can manage without AMC.</td>
+              </tr>
+              <tr className="border-b border-green-100">
+                <td className="py-3 px-4 font-medium text-green-800">Hardware Costs</td>
+                <td className="text-center py-3 px-4 text-red-600">Often lock-in with vendor hardware (branded POS devices).</td>
+                <td className="text-center py-3 px-4 text-green-600">Uses normal PC + printer + optional display (from Amazon/Flipkart).</td>
+                <td className="text-center py-3 px-4 text-blue-600">💰 Flexible hardware, buy cheap/reliable options, no lock-in.</td>
+              </tr>
+              <tr className="border-b border-green-100">
+                <td className="py-3 px-4 font-medium text-green-800">GST & Menu Updates</td>
+                <td className="text-center py-3 px-4 text-red-600">Need vendor support / online updates.</td>
+                <td className="text-center py-3 px-4 text-green-600">Owner can add/delete items, edit GST easily in software.</td>
+                <td className="text-center py-3 px-4 text-blue-600">💰 Saves service charges, avoids waiting time.</td>
+              </tr>
+              <tr className="border-b border-green-100">
+                <td className="py-3 px-4 font-medium text-green-800">Kitchen Display</td>
+                <td className="text-center py-3 px-4 text-red-600">Needs cloud sync or special hardware (expensive).</td>
+                <td className="text-center py-3 px-4 text-green-600">Simple local display → direct link or router/bluetooth.</td>
+                <td className="text-center py-3 px-4 text-blue-600">💰 Lower hardware + no internet costs.</td>
+              </tr>
+              <tr className="border-b border-green-100">
+                <td className="py-3 px-4 font-medium text-green-800">Downtime Risk</td>
+                <td className="text-center py-3 px-4 text-red-600">Internet/server down → billing stops.</td>
+                <td className="text-center py-3 px-4 text-green-600">Works as long as power is on.</td>
+                <td className="text-center py-3 px-4 text-blue-600">💰 Prevents revenue loss during downtime.</td>
+              </tr>
+              <tr className="border-b border-green-100">
+                <td className="py-3 px-4 font-medium text-green-800">Training</td>
+                <td className="text-center py-3 px-4 text-red-600">Complex dashboards. Need staff training.</td>
+                <td className="text-center py-3 px-4 text-green-600">Simple, Excel-like system → staff can learn in 1–2 hours.</td>
+                <td className="text-center py-3 px-4 text-blue-600">💰 Less training cost & faster staff replacement.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div className="mt-6 p-4 bg-green-100 rounded-lg border border-green-300">
+          <h4 className="text-lg font-bold text-green-800 mb-3">🟢 Key Money-Saving Points for Client</h4>
+          <ul className="space-y-2 text-green-700">
+            <li>• <strong>One-time purchase</strong>, no subscription forever.</li>
+            <li>• <strong>No AMC</strong> or high vendor support fees.</li>
+            <li>• <strong>No dependency</strong> on internet bills or downtime.</li>
+            <li>• <strong>Freedom to choose</strong> cheaper hardware from Amazon (not vendor-locked).</li>
+            <li>• <strong>Owner can self-manage</strong> menu, GST, and reports → no extra payments.</li>
+          </ul>
+        </div>
+      </div>
+
       {/* Important Notice */}
       <div className="card p-6 mb-8 bg-yellow-50 border-yellow-200">
         <div className="flex items-start space-x-3">
