@@ -91,8 +91,8 @@ const KitchenDisplay = () => {
           <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <ChefHat className="w-8 h-8 text-orange-600" />
           </div>
-          <h3 className="text-2xl font-bold text-gray-800">{state.currentTable - 1}</h3>
-          <p className="text-gray-600">Tables Served Today</p>
+          <h3 className="text-2xl font-bold text-gray-800">{state.orders.length}</h3>
+          <p className="text-gray-600">Total Orders Today</p>
         </div>
       </div>
 

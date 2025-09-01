@@ -69,7 +69,7 @@ function appReducer(state, action) {
     case actionTypes.GENERATE_BILL:
       const newOrder = {
         id: state.orderCounter,
-        tableNo: state.currentTable,
+        tableNo: action.payload, // Use the passed table number
         items: state.cart,
         total: state.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0),
         timestamp: new Date().toISOString(),
@@ -81,7 +81,6 @@ function appReducer(state, action) {
         orders: [...state.orders, newOrder],
         kitchenOrders: [...state.kitchenOrders, newOrder],
         orderCounter: state.orderCounter + 1,
-        currentTable: state.currentTable + 1,
         cart: []
       };
 
@@ -140,7 +139,7 @@ export function AppProvider({ children }) {
     removeFromCart: (itemId) => dispatch({ type: actionTypes.REMOVE_FROM_CART, payload: itemId }),
     updateCartQuantity: (id, quantity) => dispatch({ type: actionTypes.UPDATE_CART_QUANTITY, payload: { id, quantity } }),
     clearCart: () => dispatch({ type: actionTypes.CLEAR_CART }),
-    generateBill: () => dispatch({ type: actionTypes.GENERATE_BILL }),
+    generateBill: (tableNo) => dispatch({ type: actionTypes.GENERATE_BILL, payload: tableNo }),
     markOrderDone: (orderId) => dispatch({ type: actionTypes.MARK_ORDER_DONE, payload: orderId }),
     updateDailySales: (salesData) => dispatch({ type: actionTypes.UPDATE_DAILY_SALES, payload: salesData })
   };

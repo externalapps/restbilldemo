@@ -55,15 +55,7 @@ const Sidebar = () => {
         </ul>
       </nav>
 
-      {/* Footer */}
-      <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200">
-        <div className="text-center">
-          <div className="text-xs text-gray-500">
-            <p>© 2014 - 2025 BeyondX Informatics Analytics Pvt Ltd</p>
-            <p>All rights reserved</p>
-          </div>
-        </div>
-      </div>
+
     </div>
   );
 };

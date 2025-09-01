@@ -260,6 +260,22 @@ Phone: +91 9505009699
                 <p className="text-sm text-gray-500">Software & Services</p>
               </div>
 
+              {/* Software Features */}
+              <div className="mb-6">
+                <h4 className="font-semibold text-gray-800 mb-3 flex items-center">
+                  <Zap className="w-4 h-4 mr-2 text-primary-600" />
+                  Software Features (Included)
+                </h4>
+                <ul className="space-y-2">
+                  {plan.software.map((feature, index) => (
+                    <li key={index} className="flex items-center text-sm text-gray-600">
+                      <Check className="w-4 h-4 mr-2 text-green-500" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
               {/* Hardware Requirements (Not Included) */}
               <div className="mb-6">
                 <h4 className="font-semibold text-gray-800 mb-3 flex items-center">
@@ -290,22 +306,6 @@ Phone: +91 9505009699
                     ))}
                   </div>
                 </div>
-              </div>
-
-              {/* Software Features */}
-              <div className="mb-6">
-                <h4 className="font-semibold text-gray-800 mb-3 flex items-center">
-                  <Zap className="w-4 h-4 mr-2 text-primary-600" />
-                  Software Features (Included)
-                </h4>
-                <ul className="space-y-2">
-                  {plan.software.map((feature, index) => (
-                    <li key={index} className="flex items-center text-sm text-gray-600">
-                      <Check className="w-4 h-4 mr-2 text-green-500" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
               </div>
 
               {/* Total Cost Breakdown */}
