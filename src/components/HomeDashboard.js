@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../context/AppContext';
 import { 
   Receipt, 
@@ -11,6 +12,7 @@ import {
 
 const HomeDashboard = () => {
   const { state } = useAppContext();
+  const navigate = useNavigate();
 
   const stats = [
     {
@@ -85,15 +87,24 @@ const HomeDashboard = () => {
         <div className="card p-6">
           <h3 className="text-lg font-semibold text-gray-800 mb-4">Quick Actions</h3>
           <div className="space-y-3">
-            <button className="w-full btn-primary text-left flex items-center">
+            <button 
+              onClick={() => navigate('/billing')}
+              className="w-full btn-primary text-left flex items-center hover:bg-primary-700 transition-colors"
+            >
               <Receipt className="w-5 h-5 mr-3" />
               Start New Order
             </button>
-            <button className="w-full btn-secondary text-left flex items-center">
+            <button 
+              onClick={() => navigate('/kitchen')}
+              className="w-full btn-secondary text-left flex items-center hover:bg-gray-700 transition-colors"
+            >
               <Monitor className="w-5 h-5 mr-3" />
               View Kitchen Orders
             </button>
-            <button className="w-full btn-secondary text-left flex items-center">
+            <button 
+              onClick={() => navigate('/reports')}
+              className="w-full btn-secondary text-left flex items-center hover:bg-gray-700 transition-colors"
+            >
               <BarChart3 className="w-5 h-5 mr-3" />
               View Reports
             </button>

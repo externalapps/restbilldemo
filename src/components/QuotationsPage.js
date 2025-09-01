@@ -289,12 +289,12 @@ Phone: +91 9505009699
                 <td className="text-center py-3 px-4 text-sm text-gray-600">Phone + Basic Training</td>
                 <td className="text-center py-3 px-4 text-sm text-gray-600">24/7 + Comprehensive</td>
               </tr>
-              <tr>
-                <td className="py-3 px-4 font-medium">Total Investment</td>
-                <td className="text-center py-3 px-4 font-bold text-blue-700">₹1,14,000</td>
-                <td className="text-center py-3 px-4 font-bold text-orange-700">₹1,90,500</td>
-                <td className="text-center py-3 px-4 font-bold text-purple-700">₹3,90,000</td>
-              </tr>
+                             <tr>
+                 <td className="py-3 px-4 font-medium">Total Investment</td>
+                 <td className="text-center py-3 px-4 font-bold text-blue-700">₹1,10,500</td>
+                 <td className="text-center py-3 px-4 font-bold text-orange-700">₹1,77,500</td>
+                 <td className="text-center py-3 px-4 font-bold text-purple-700">₹3,63,000</td>
+               </tr>
             </tbody>
           </table>
         </div>
