@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useAppContext } from '../context/AppContext';
 import { 
   TrendingUp, 
-  DollarSign, 
   Receipt, 
   Users,
   Calendar,
@@ -81,7 +80,7 @@ const ReportsPage = () => {
               <p className="text-2xl font-bold text-gray-900">₹{currentData.totalSales.toLocaleString()}</p>
             </div>
             <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-              <DollarSign className="w-6 h-6 text-green-600" />
+              <BarChart3 className="w-6 h-6 text-green-600" />
             </div>
           </div>
           <div className="mt-4 flex items-center text-sm">
