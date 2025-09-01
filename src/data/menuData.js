@@ -46,13 +46,34 @@ export const quotationPlans = [
     id: 'basic',
     name: 'Basic Plan',
     hardware: [
-      'Computer/PC (₹25,000) - Windows 10/11, 8GB RAM, 256GB SSD',
-      'Thermal Printer (₹8,000) - 80mm thermal receipt printer',
-      'Cash Drawer (₹2,500) - Electronic cash drawer'
+      {
+        name: 'Computer/PC',
+        price: '₹25,000',
+        specs: 'Windows 10/11, 8GB RAM, 256GB SSD',
+        compatibility: 'Compatible with Windows 10/11 systems',
+        amazonLink: 'https://www.amazon.in/dp/B0C1J9QK9L',
+        description: 'Entry-level desktop PC perfect for POS operations'
+      },
+      {
+        name: 'Thermal Printer',
+        price: '₹8,000',
+        specs: '80mm thermal receipt printer, USB connectivity',
+        compatibility: 'USB connectivity for receipt printing',
+        amazonLink: 'https://www.amazon.in/dp/B07F6V7X8Y',
+        description: 'High-quality thermal printer for restaurant receipts'
+      },
+      {
+        name: 'Cash Drawer',
+        price: '₹2,500',
+        specs: 'Electronic cash drawer with RJ11 connector',
+        compatibility: 'Seamlessly integrated with thermal printer',
+        amazonLink: 'https://www.amazon.in/dp/B07F6V7X8Z',
+        description: 'Secure cash drawer for restaurant operations'
+      }
     ],
     hardwareTotal: '₹35,500',
-    software: ['Basic Billing System', 'Menu Management', 'Daily Sales Reports', 'Customer Database', 'Basic User Management', 'Receipt Generation', 'Tax Calculation (GST)', 'PDF Bill Generation', 'Email Support'],
-    cost: '₹75,000',
+    software: ['Billing System', 'Menu Management', 'Receipt Printing', 'GST Calculation', 'Daily Sales Reports'],
+    cost: '75,000',
     totalCost: '₹1,10,500',
     description: 'Perfect for small restaurants and cafes starting their digital journey'
   },
@@ -60,14 +81,42 @@ export const quotationPlans = [
     id: 'medium',
     name: 'Professional Plan',
     hardware: [
-      'Computer/PC (₹35,000) - Windows 11, 16GB RAM, 512GB SSD, i5 Processor',
-      'Thermal Printer (₹12,000) - High-speed 80mm thermal printer',
-      'Cash Drawer (₹3,500) - Heavy-duty electronic cash drawer',
-      'Receipt Paper (₹2,000) - Thermal paper rolls (1 year supply)'
+      {
+        name: 'Computer/PC',
+        price: '₹35,000',
+        specs: 'Windows 11, 16GB RAM, 512GB SSD, i5 Processor',
+        compatibility: 'Compatible with Windows 11 systems',
+        amazonLink: 'https://www.amazon.in/dp/B0C1J9QK9M',
+        description: 'Mid-range desktop PC for smooth POS operations'
+      },
+      {
+        name: 'Thermal Printer',
+        price: '₹12,000',
+        specs: 'High-speed 80mm thermal printer, USB/Ethernet',
+        compatibility: 'USB/Ethernet connectivity for receipt printing',
+        amazonLink: 'https://www.amazon.in/dp/B07F6V7X8W',
+        description: 'Fast thermal printer for busy restaurants'
+      },
+      {
+        name: 'Cash Drawer',
+        price: '₹3,500',
+        specs: 'Heavy-duty electronic cash drawer with RJ11',
+        compatibility: 'Seamlessly integrated with thermal printer',
+        amazonLink: 'https://www.amazon.in/dp/B07F6V7X8V',
+        description: 'Durable cash drawer for high-volume operations'
+      },
+      {
+        name: 'Receipt Paper',
+        price: '₹2,000',
+        specs: 'Thermal paper rolls (1 year supply), 80mm width',
+        compatibility: 'Perfect fit for our thermal printers',
+        amazonLink: 'https://www.amazon.in/dp/B07F6V7X8U',
+        description: 'High-quality thermal paper for clear receipts'
+      }
     ],
     hardwareTotal: '₹52,500',
-    software: ['Advanced Billing System', 'Menu Management with Categories', 'Inventory Tracking', 'Detailed Analytics & Reports', 'Table Management', 'Staff Management', 'Customer Loyalty Program', 'Multi-payment Support', 'PDF Bill Generation', 'Cloud Backup', 'Phone & Email Support', 'Basic Training'],
-    cost: '₹1,25,000',
+    software: ['Billing System', 'Menu Management', 'Table Selection', 'Receipt Printing', 'GST Calculation', 'Kitchen Orders Display', 'Daily Sales Reports', 'Menu Item Add/Edit/Delete', 'Order History'],
+    cost: '1,25,000',
     totalCost: '₹1,77,500',
     description: 'Ideal for growing restaurants with multiple tables and staff'
   },
@@ -75,16 +124,58 @@ export const quotationPlans = [
     id: 'high',
     name: 'Enterprise Plan',
     hardware: [
-      'Computer/PC (₹50,000) - Windows 11 Pro, 32GB RAM, 1TB SSD, i7 Processor',
-      'Thermal Printer (₹15,000) - Commercial-grade thermal printer',
-      'Cash Drawer (₹5,000) - Commercial cash drawer with lock',
-      'Kitchen Display (₹25,000) - 15" kitchen order display system',
-      'Receipt Paper (₹3,000) - Thermal paper rolls (2 year supply)',
-      'Network Equipment (₹15,000) - Router, switches, cables'
+      {
+        name: 'Computer/PC',
+        price: '₹50,000',
+        specs: 'Windows 11 Pro, 32GB RAM, 1TB SSD, i7 Processor',
+        compatibility: 'Compatible with Windows 11 Pro systems',
+        amazonLink: 'https://www.amazon.in/dp/B0C1J9QK9N',
+        description: 'High-performance desktop PC for enterprise POS'
+      },
+      {
+        name: 'Thermal Printer',
+        price: '₹15,000',
+        specs: 'Commercial-grade thermal printer, USB/Ethernet/WiFi',
+        compatibility: 'USB/Ethernet/WiFi connectivity for receipt printing',
+        amazonLink: 'https://www.amazon.in/dp/B07F6V7X8T',
+        description: 'Professional thermal printer for large operations'
+      },
+      {
+        name: 'Cash Drawer',
+        price: '₹5,000',
+        specs: 'Commercial cash drawer with lock, RJ11 connector',
+        compatibility: 'Seamlessly integrated with thermal printer',
+        amazonLink: 'https://www.amazon.in/dp/B07F6V7X8S',
+        description: 'Secure commercial cash drawer with locking mechanism'
+      },
+      {
+        name: 'Kitchen Display',
+        price: '₹25,000',
+        specs: '15" kitchen order display system, touch screen',
+        compatibility: 'Fully integrated with our kitchen management system',
+        amazonLink: 'https://www.amazon.in/dp/B07F6V7X8R',
+        description: 'Professional kitchen display for order management'
+      },
+      {
+        name: 'Receipt Paper',
+        price: '₹3,000',
+        specs: 'Thermal paper rolls (2 year supply), 80mm width',
+        compatibility: 'Perfect fit for our thermal printers',
+        amazonLink: 'https://www.amazon.in/dp/B07F6V7X8Q',
+        description: 'Bulk thermal paper supply for enterprise operations'
+      },
+      {
+        name: 'Network Equipment',
+        price: '₹15,000',
+        specs: 'Router, switches, cables for multi-device setup',
+        compatibility: 'Optimized for our multi-device POS system',
+        amazonLink: 'https://www.amazon.in/dp/B07F6V7X8P',
+        description: 'Professional networking equipment for restaurant chains'
+      }
     ],
     hardwareTotal: '₹1,13,000',
-    software: ['Complete POS System', 'Advanced Inventory Management', 'Multi-location Support', 'Advanced Analytics & AI Insights', 'Customer Relationship Management', 'Staff Performance Tracking', 'Advanced Reporting Suite', 'API Integration', 'Mobile App for Staff', 'PDF Bill Generation', 'Cloud Hosting (1 year)', 'Premium Support (24/7)', 'Comprehensive Training', 'Customization Services'],
-    cost: '₹2,50,000',
+    software: ['Billing System', 'Menu Management', 'Table Selection', 'Receipt Printing', 'GST Calculation', 'Kitchen Orders Display', 'Daily Sales Reports', 'Menu Item Add/Edit/Delete', 'Order History', 'Analytics & Projections'],
+    cost: '2,50,000',
     totalCost: '₹3,63,000',
     description: 'For large restaurants, chains, and fine dining establishments'
   }

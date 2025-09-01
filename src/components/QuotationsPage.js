@@ -73,7 +73,8 @@ Hardware Required: ${plan.hardwareTotal}
 Total Investment: ₹${plan.totalCost}
 
 Hardware Requirements:
-${plan.hardware.map(item => `• ${item}`).join('\n')}
+${plan.hardware.map(item => `• ${item.name} - ${item.price}
+  Specs: ${item.specs}`).join('\n\n')}
 
 Software Features:
 ${plan.software.map(feature => `• ${feature}`).join('\n')}
@@ -156,13 +157,18 @@ Phone: +91 9505009699
                 </h4>
                 <div className="bg-red-50 border border-red-200 rounded-lg p-3 mb-3">
                   <p className="text-sm text-red-700 font-medium mb-2">Total Hardware Cost: {plan.hardwareTotal}</p>
-                  <ul className="space-y-1">
+                  <div className="space-y-3">
                     {plan.hardware.map((item, index) => (
-                      <li key={index} className="text-xs text-red-600">
-                        • {item}
-                      </li>
+                      <div key={index} className="bg-white rounded-lg p-3 border border-red-100">
+                        <div className="flex justify-between items-start mb-2">
+                          <h5 className="font-semibold text-red-800 text-sm">{item.name}</h5>
+                          <span className="font-bold text-red-700 text-sm">{item.price}</span>
+                        </div>
+                        <p className="text-xs text-red-600 mb-2">{item.specs}</p>
+                        <p className="text-xs text-red-600 mb-3">{item.description}</p>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               </div>
 
@@ -222,7 +228,7 @@ Phone: +91 9505009699
       {/* Features Comparison Table */}
       <div className="card p-6">
         <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">
-          Detailed Features Comparison
+          Features Comparison
         </h3>
         <div className="overflow-x-auto">
           <table className="w-full">
@@ -236,7 +242,7 @@ Phone: +91 9505009699
             </thead>
             <tbody>
               <tr className="border-b border-gray-100">
-                <td className="py-3 px-4 font-medium">Basic Billing</td>
+                <td className="py-3 px-4 font-medium">Billing System</td>
                 <td className="text-center py-3 px-4">
                   <Check className="w-5 h-5 text-green-500 mx-auto" />
                 </td>
@@ -248,7 +254,19 @@ Phone: +91 9505009699
                 </td>
               </tr>
               <tr className="border-b border-gray-100">
-                <td className="py-3 px-4 font-medium">Inventory Tracking</td>
+                <td className="py-3 px-4 font-medium">Menu Management</td>
+                <td className="text-center py-3 px-4">
+                  <Check className="w-5 h-5 text-green-500 mx-auto" />
+                </td>
+                <td className="text-center py-3 px-4">
+                  <Check className="w-5 h-5 text-green-500 mx-auto" />
+                </td>
+                <td className="text-center py-3 px-4">
+                  <Check className="w-5 h-5 text-green-500 mx-auto" />
+                </td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="py-3 px-4 font-medium">Table Selection</td>
                 <td className="text-center py-3 px-4 text-gray-400">-</td>
                 <td className="text-center py-3 px-4">
                   <Check className="w-5 h-5 text-green-500 mx-auto" />
@@ -258,7 +276,7 @@ Phone: +91 9505009699
                 </td>
               </tr>
               <tr className="border-b border-gray-100">
-                <td className="py-3 px-4 font-medium">Table Management</td>
+                <td className="py-3 px-4 font-medium">Kitchen Orders Display</td>
                 <td className="text-center py-3 px-4 text-gray-400">-</td>
                 <td className="text-center py-3 px-4">
                   <Check className="w-5 h-5 text-green-500 mx-auto" />
@@ -268,7 +286,27 @@ Phone: +91 9505009699
                 </td>
               </tr>
               <tr className="border-b border-gray-100">
-                <td className="py-3 px-4 font-medium">Multi-location Support</td>
+                <td className="py-3 px-4 font-medium">Menu Item Add/Edit/Delete</td>
+                <td className="text-center py-3 px-4 text-gray-400">-</td>
+                <td className="text-center py-3 px-4">
+                  <Check className="w-5 h-5 text-green-500 mx-auto" />
+                </td>
+                <td className="text-center py-3 px-4">
+                  <Check className="w-5 h-5 text-green-500 mx-auto" />
+                </td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="py-3 px-4 font-medium">Order History</td>
+                <td className="text-center py-3 px-4 text-gray-400">-</td>
+                <td className="text-center py-3 px-4">
+                  <Check className="w-5 h-5 text-green-500 mx-auto" />
+                </td>
+                <td className="text-center py-3 px-4">
+                  <Check className="w-5 h-5 text-green-500 mx-auto" />
+                </td>
+              </tr>
+              <tr className="border-b border-gray-100">
+                <td className="py-3 px-4 font-medium">Analytics & Projections</td>
                 <td className="text-center py-3 px-4 text-gray-400">-</td>
                 <td className="text-center py-3 px-4 text-gray-400">-</td>
                 <td className="text-center py-3 px-4">
@@ -276,25 +314,17 @@ Phone: +91 9505009699
                 </td>
               </tr>
               <tr className="border-b border-gray-100">
-                <td className="py-3 px-4 font-medium">Advanced Analytics</td>
-                <td className="text-center py-3 px-4 text-gray-400">-</td>
-                <td className="text-center py-3 px-4 text-gray-400">-</td>
-                <td className="text-center py-3 px-4">
-                  <Check className="w-5 h-5 text-green-500 mx-auto" />
-                </td>
-              </tr>
-              <tr className="border-b border-gray-100">
-                <td className="py-3 px-4 font-medium">Training & Support</td>
+                <td className="py-3 px-4 font-medium">Support</td>
                 <td className="text-center py-3 px-4 text-sm text-gray-600">Email</td>
-                <td className="text-center py-3 px-4 text-sm text-gray-600">Phone + Basic Training</td>
-                <td className="text-center py-3 px-4 text-sm text-gray-600">24/7 + Comprehensive</td>
+                <td className="text-center py-3 px-4 text-sm text-gray-600">Phone + Training</td>
+                <td className="text-center py-3 px-4 text-sm text-gray-600">Phone + Training</td>
               </tr>
-                             <tr>
-                 <td className="py-3 px-4 font-medium">Total Investment</td>
-                 <td className="text-center py-3 px-4 font-bold text-blue-700">₹1,10,500</td>
-                 <td className="text-center py-3 px-4 font-bold text-orange-700">₹1,77,500</td>
-                 <td className="text-center py-3 px-4 font-bold text-purple-700">₹3,63,000</td>
-               </tr>
+              <tr>
+                <td className="py-3 px-4 font-medium">Total Investment</td>
+                <td className="text-center py-3 px-4 font-bold text-blue-700">₹1,10,500</td>
+                <td className="text-center py-3 px-4 font-bold text-orange-700">₹1,77,500</td>
+                <td className="text-center py-3 px-4 font-bold text-purple-700">₹3,63,000</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -308,18 +338,18 @@ Phone: +91 9505009699
             <p className="font-medium mb-2">Software Development:</p>
             <ul className="space-y-1">
               <li>• Custom POS application development</li>
-              <li>• Database design and setup</li>
               <li>• User interface customization</li>
-              <li>• Integration with your existing systems</li>
+              <li>• Offline desktop application</li>
+              <li>• Source code ownership</li>
             </ul>
           </div>
           <div>
             <p className="font-medium mb-2">Implementation & Support:</p>
             <ul className="space-y-1">
               <li>• Installation and configuration</li>
-              <li>• Staff training and documentation</li>
-              <li>• Technical support and maintenance</li>
-              <li>• Regular updates and improvements</li>
+              <li>• Staff training (1 session)</li>
+              <li>• Basic technical support</li>
+              <li>• Bug fixes for 3 months</li>
             </ul>
           </div>
         </div>
