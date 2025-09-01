@@ -103,7 +103,7 @@ RESTAURANT POS SYSTEM PROPOSAL
 Plan: ${plan.name}
 Software Cost: ₹${plan.cost}
 Hardware Required: ${plan.hardwareTotal}
-Total Investment: ₹${plan.totalCost}
+Total Investment: ${plan.totalCost}
 
 Hardware Requirements:
 ${plan.hardware.map(item => `• ${item.name} - ${item.price}
@@ -242,7 +242,7 @@ Phone: +91 9505009699
                 </div>
                 <div className="border-t border-gray-300 mt-2 pt-2 flex justify-between items-center font-bold text-lg">
                   <span>Total Investment:</span>
-                  <span className="text-primary-600">₹{plan.totalCost}</span>
+                  <span className="text-primary-600">{plan.totalCost}</span>
                 </div>
               </div>
 
@@ -419,7 +419,7 @@ Phone: +91 9505009699
                   <strong>Hardware (Separate):</strong> {selectedPlan.hardwareTotal}
                 </p>
                 <p className="text-sm font-bold text-primary-600">
-                  <strong>Total Investment:</strong> ₹{selectedPlan.totalCost}
+                  <strong>Total Investment:</strong> {selectedPlan.totalCost}
                 </p>
               </div>
             </div>
