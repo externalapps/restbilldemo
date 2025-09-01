@@ -47,34 +47,34 @@ export const quotationPlans = [
     name: 'Basic Plan',
     hardware: [
       {
-        name: 'Computer/PC',
-        price: '₹25,000',
-        specs: 'Windows 10/11, 8GB RAM, 256GB SSD',
-        compatibility: 'Compatible with Windows 10/11 systems',
-        amazonLink: 'https://www.amazon.in/dp/B0C1J9QK9L',
+        name: 'Desktop PC – NXTGN Core i5 Desktop',
+        price: '₹24,999',
+        specs: '8GB RAM, 256GB SSD, Windows 11',
+        compatibility: 'Compatible with Windows 11 systems',
+        amazonLink: 'https://www.amazon.in/NXTGN-Generation-Desktop-Software-Pre-Installed/dp/B0DSLMP8JC?utm_source=chatgpt.com',
         description: 'Entry-level desktop PC perfect for POS operations'
       },
       {
-        name: 'Thermal Printer',
-        price: '₹8,000',
-        specs: '80mm thermal receipt printer, USB connectivity',
-        compatibility: 'USB connectivity for receipt printing',
-        amazonLink: 'https://www.amazon.in/dp/B07F6V7X8Y',
+        name: 'Thermal Printer – ATPOS AT-402',
+        price: '₹5,499',
+        specs: 'Thermal Receipt Printer (Bluetooth + USB)',
+        compatibility: 'Bluetooth + USB connectivity for receipt printing',
+        amazonLink: 'https://www.amazon.in/ATPOS-Thermal-Bluetooth-High-Speed-Printing/dp/B0F26NP7Y1?utm_source=chatgpt.com',
         description: 'High-quality thermal printer for restaurant receipts'
       },
       {
-        name: 'Cash Drawer',
-        price: '₹2,500',
-        specs: 'Electronic cash drawer with RJ11 connector',
+        name: 'Cash Drawer – Rugtek CR-410',
+        price: '₹4,699',
+        specs: 'Cash Drawer (RJ11, Key Lock)',
         compatibility: 'Seamlessly integrated with thermal printer',
-        amazonLink: 'https://www.amazon.in/dp/B07F6V7X8Z',
+        amazonLink: 'https://www.amazon.in/Rugtek-CR410-B/dp/B08FRF2CMF?utm_source=chatgpt.com',
         description: 'Secure cash drawer for restaurant operations'
       }
     ],
-    hardwareTotal: '₹35,500',
+    hardwareTotal: '₹35,197',
     software: ['Billing System', 'Menu Management', 'Receipt Printing', 'GST Calculation', 'Daily Sales Reports'],
     cost: '75,000',
-    totalCost: '₹1,10,500',
+    totalCost: '₹1,10,197',
     description: 'Perfect for small restaurants and cafes starting their digital journey'
   },
   {
@@ -82,42 +82,42 @@ export const quotationPlans = [
     name: 'Professional Plan',
     hardware: [
       {
-        name: 'Computer/PC',
-        price: '₹35,000',
-        specs: 'Windows 11, 16GB RAM, 512GB SSD, i5 Processor',
-        compatibility: 'Compatible with Windows 11 systems',
-        amazonLink: 'https://www.amazon.in/dp/B0C1J9QK9M',
+        name: 'Desktop PC – NXTGN Core i5 Desktop',
+        price: '₹34,999',
+        specs: '16GB RAM, 512GB SSD, Windows 11 Pro',
+        compatibility: 'Compatible with Windows 11 Pro systems',
+        amazonLink: 'https://www.amazon.in/NXTGN-Generation-Desktop-Software-Pre-Installed/dp/B0DSLMP8JC?utm_source=chatgpt.com',
         description: 'Mid-range desktop PC for smooth POS operations'
       },
       {
-        name: 'Thermal Printer',
-        price: '₹12,000',
-        specs: 'High-speed 80mm thermal printer, USB/Ethernet',
-        compatibility: 'USB/Ethernet connectivity for receipt printing',
-        amazonLink: 'https://www.amazon.in/dp/B07F6V7X8W',
+        name: 'Thermal Printer – ATPOS AT-402',
+        price: '₹5,499',
+        specs: 'Thermal Receipt Printer (Bluetooth + USB)',
+        compatibility: 'Bluetooth + USB connectivity for receipt printing',
+        amazonLink: 'https://www.amazon.in/ATPOS-Thermal-Bluetooth-High-Speed-Printing/dp/B0F26NP7Y1?utm_source=chatgpt.com',
         description: 'Fast thermal printer for busy restaurants'
       },
       {
-        name: 'Cash Drawer',
-        price: '₹3,500',
-        specs: 'Heavy-duty electronic cash drawer with RJ11',
+        name: 'Cash Drawer – Rugtek CR-410',
+        price: '₹4,699',
+        specs: 'Cash Drawer (RJ11, Key Lock)',
         compatibility: 'Seamlessly integrated with thermal printer',
-        amazonLink: 'https://www.amazon.in/dp/B07F6V7X8V',
+        amazonLink: 'https://www.amazon.in/Rugtek-CR410-B/dp/B08FRF2CMF?utm_source=chatgpt.com',
         description: 'Durable cash drawer for high-volume operations'
       },
       {
-        name: 'Receipt Paper',
+        name: 'Receipt Paper – Generic Thermal Paper Roll',
         price: '₹2,000',
-        specs: 'Thermal paper rolls (1 year supply), 80mm width',
+        specs: 'Thermal paper rolls (80mm, 50 rolls)',
         compatibility: 'Perfect fit for our thermal printers',
-        amazonLink: 'https://www.amazon.in/dp/B07F6V7X8U',
+        amazonLink: 'https://www.amazon.in/s?k=thermal+paper+roll+80mm',
         description: 'High-quality thermal paper for clear receipts'
       }
     ],
-    hardwareTotal: '₹52,500',
+    hardwareTotal: '₹47,197',
     software: ['Billing System', 'Menu Management', 'Table Selection', 'Receipt Printing', 'GST Calculation', 'Kitchen Orders Display', 'Daily Sales Reports', 'Menu Item Add/Edit/Delete', 'Order History'],
     cost: '1,25,000',
-    totalCost: '₹1,77,500',
+    totalCost: '₹1,72,197',
     description: 'Ideal for growing restaurants with multiple tables and staff'
   },
   {
@@ -125,58 +125,58 @@ export const quotationPlans = [
     name: 'Enterprise Plan',
     hardware: [
       {
-        name: 'Computer/PC',
-        price: '₹50,000',
-        specs: 'Windows 11 Pro, 32GB RAM, 1TB SSD, i7 Processor',
+        name: 'Desktop PC – NXTGN Core i7 Desktop',
+        price: '₹38,600',
+        specs: '32GB RAM, 1TB SSD, Windows 11 Pro',
         compatibility: 'Compatible with Windows 11 Pro systems',
-        amazonLink: 'https://www.amazon.in/dp/B0C1J9QK9N',
+        amazonLink: 'https://www.amazon.in/NXTGN-Generation-Desktop-Software-Pre-Installed/dp/B0DSLMP8JC?utm_source=chatgpt.com',
         description: 'High-performance desktop PC for enterprise POS'
       },
       {
-        name: 'Thermal Printer',
-        price: '₹15,000',
-        specs: 'Commercial-grade thermal printer, USB/Ethernet/WiFi',
-        compatibility: 'USB/Ethernet/WiFi connectivity for receipt printing',
-        amazonLink: 'https://www.amazon.in/dp/B07F6V7X8T',
+        name: 'Thermal Printer – ATPOS AT-402',
+        price: '₹5,499',
+        specs: 'Thermal Receipt Printer (Bluetooth + USB)',
+        compatibility: 'Bluetooth + USB connectivity for receipt printing',
+        amazonLink: 'https://www.amazon.in/ATPOS-Thermal-Bluetooth-High-Speed-Printing/dp/B0F26NP7Y1?utm_source=chatgpt.com',
         description: 'Professional thermal printer for large operations'
       },
       {
-        name: 'Cash Drawer',
-        price: '₹5,000',
-        specs: 'Commercial cash drawer with lock, RJ11 connector',
+        name: 'Cash Drawer – Rugtek CR-410',
+        price: '₹4,699',
+        specs: 'Cash Drawer (RJ11, Key Lock)',
         compatibility: 'Seamlessly integrated with thermal printer',
-        amazonLink: 'https://www.amazon.in/dp/B07F6V7X8S',
+        amazonLink: 'https://www.amazon.in/Rugtek-CR410-B/dp/B08FRF2CMF?utm_source=chatgpt.com',
         description: 'Secure commercial cash drawer with locking mechanism'
       },
       {
-        name: 'Kitchen Display',
-        price: '₹25,000',
-        specs: '15" kitchen order display system, touch screen',
+        name: 'Kitchen Display – MagicRaven Portable Touchscreen',
+        price: '₹20,999',
+        specs: '15.6" Portable Touchscreen Monitor (Full HD, HDMI)',
         compatibility: 'Fully integrated with our kitchen management system',
-        amazonLink: 'https://www.amazon.in/dp/B07F6V7X8R',
+        amazonLink: 'https://www.amazon.in/MagicRaven-Portable-Touchscreen-Lightweight-Speakers/dp/B0DY78Q2YN?utm_source=chatgpt.com',
         description: 'Professional kitchen display for order management'
       },
       {
-        name: 'Receipt Paper',
+        name: 'Receipt Paper – Generic Thermal Paper Roll',
         price: '₹3,000',
-        specs: 'Thermal paper rolls (2 year supply), 80mm width',
+        specs: 'Thermal paper rolls (80mm, 100 rolls)',
         compatibility: 'Perfect fit for our thermal printers',
-        amazonLink: 'https://www.amazon.in/dp/B07F6V7X8Q',
+        amazonLink: 'https://www.amazon.in/s?k=thermal+paper+roll+80mm',
         description: 'Bulk thermal paper supply for enterprise operations'
       },
       {
-        name: 'Network Equipment',
-        price: '₹15,000',
-        specs: 'Router, switches, cables for multi-device setup',
+        name: 'Network Equipment – D-Link R03 Wireless Router',
+        price: '₹1,299',
+        specs: 'Wireless Router (300 Mbps, Single Band)',
         compatibility: 'Optimized for our multi-device POS system',
-        amazonLink: 'https://www.amazon.in/dp/B07F6V7X8P',
+        amazonLink: 'https://www.flipkart.com/d-link-r-03-wireless-router-2-4-ghz-300-mbps-wifi-speed-single-band-external-antenna-ethernet-cable-broadband/p/itmc6bca86e0475a?pid=RTRGAT28HZMHM5BY',
         description: 'Professional networking equipment for restaurant chains'
       }
     ],
-    hardwareTotal: '₹1,13,000',
+    hardwareTotal: '₹73,996',
     software: ['Billing System', 'Menu Management', 'Table Selection', 'Receipt Printing', 'GST Calculation', 'Kitchen Orders Display', 'Daily Sales Reports', 'Menu Item Add/Edit/Delete', 'Order History', 'Analytics & Projections'],
     cost: '2,50,000',
-    totalCost: '₹3,63,000',
+    totalCost: '₹3,23,996',
     description: 'For large restaurants, chains, and fine dining establishments'
   }
 ];

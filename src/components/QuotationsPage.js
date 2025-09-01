@@ -43,22 +43,55 @@ const QuotationsPage = () => {
     setShowContactForm(true);
   };
 
-  const handleContactSubmit = (e) => {
+  const handleContactSubmit = async (e) => {
     e.preventDefault();
     
-    // In a real app, this would send the contact info to the server
-    alert(`Thank you ${contactInfo.name}! We have received your interest in the ${selectedPlan.name}.\n\nWe will contact you within 24 hours at ${contactInfo.preferredContact === 'email' ? contactInfo.email : contactInfo.phone} to discuss your requirements and schedule a consultation.\n\nYour selection has been saved and our team will prepare a detailed proposal for you.`);
-    
-    // Reset form
-    setContactInfo({
-      name: '',
-      email: '',
-      phone: '',
-      restaurant: '',
-      preferredContact: 'email'
-    });
-    setShowContactForm(false);
-    setSelectedPlan(null);
+    try {
+      // Send data to webhook service
+      const webhookData = {
+        plan: selectedPlan.name,
+        restaurantName: contactInfo.restaurant,
+        contactName: contactInfo.name,
+        email: contactInfo.email,
+        phone: contactInfo.phone,
+        preferredContact: contactInfo.preferredContact,
+        timestamp: new Date().toISOString(),
+        totalInvestment: selectedPlan.totalCost,
+        softwareCost: selectedPlan.cost,
+        hardwareCost: selectedPlan.hardwareTotal
+      };
+
+      // Send to our Vercel API endpoint
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(webhookData)
+      });
+
+      if (response.ok) {
+        // Show success message
+        const responseData = await response.json();
+        alert(responseData.message || `Thank you ${contactInfo.name}! We have received your interest in the ${selectedPlan.name}.\n\nWe will contact you within 24 hours at ${contactInfo.preferredContact === 'email' ? contactInfo.email : contactInfo.phone} to discuss your requirements and schedule a consultation.\n\nYour selection has been saved and our team will prepare a detailed proposal for you.`);
+        
+        // Reset form
+        setContactInfo({
+          name: '',
+          email: '',
+          phone: '',
+          restaurant: '',
+          preferredContact: 'email'
+        });
+        setShowContactForm(false);
+        setSelectedPlan(null);
+      } else {
+        throw new Error('Failed to send data');
+      }
+    } catch (error) {
+      console.error('Error sending contact form:', error);
+      alert('There was an error sending your information. Please try again or contact us directly.');
+    }
   };
 
   const downloadProposal = (plan) => {
@@ -166,6 +199,15 @@ Phone: +91 9505009699
                         </div>
                         <p className="text-xs text-red-600 mb-2">{item.specs}</p>
                         <p className="text-xs text-red-600 mb-3">{item.description}</p>
+                        <a 
+                          href={item.amazonLink} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-xs text-blue-600 hover:text-blue-800 font-medium"
+                        >
+                          <Package className="w-3 h-3 mr-1" />
+                          Buy on Amazon →
+                        </a>
                       </div>
                     ))}
                   </div>
@@ -321,9 +363,9 @@ Phone: +91 9505009699
               </tr>
               <tr>
                 <td className="py-3 px-4 font-medium">Total Investment</td>
-                <td className="text-center py-3 px-4 font-bold text-blue-700">₹1,10,500</td>
-                <td className="text-center py-3 px-4 font-bold text-orange-700">₹1,77,500</td>
-                <td className="text-center py-3 px-4 font-bold text-purple-700">₹3,63,000</td>
+                <td className="text-center py-3 px-4 font-bold text-blue-700">₹1,10,197</td>
+                <td className="text-center py-3 px-4 font-bold text-orange-700">₹1,72,197</td>
+                <td className="text-center py-3 px-4 font-bold text-purple-700">₹3,23,996</td>
               </tr>
             </tbody>
           </table>
