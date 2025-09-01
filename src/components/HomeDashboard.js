@@ -52,10 +52,10 @@ const HomeDashboard = () => {
       {/* Welcome Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-800 mb-2">
-          Welcome to Restaurant POS
+          Welcome to BeyondX POS
         </h1>
         <p className="text-gray-600">
-          Professional point of sale system for modern restaurants
+          Easy Billing - Professional point of sale system for modern restaurants
         </p>
       </div>
 

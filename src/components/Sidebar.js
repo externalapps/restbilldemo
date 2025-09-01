@@ -13,9 +13,9 @@ const Sidebar = () => {
   const navItems = [
     { path: '/', icon: Home, label: 'Dashboard' },
     { path: '/billing', icon: Receipt, label: 'Billing & Menu' },
-    { path: '/quotations', icon: FileText, label: 'Quotations' },
     { path: '/kitchen', icon: Monitor, label: 'Kitchen Display' },
-    { path: '/reports', icon: BarChart3, label: 'Reports' }
+    { path: '/reports', icon: BarChart3, label: 'Reports' },
+    { path: '/quotations', icon: FileText, label: 'Quotations' }
   ];
 
   return (
@@ -23,12 +23,12 @@ const Sidebar = () => {
       {/* Logo/Brand */}
       <div className="p-6 border-b border-gray-200">
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
-            <Receipt className="w-6 h-6 text-white" />
+          <div className="w-10 h-10 rounded-lg flex items-center justify-center overflow-hidden">
+            <img src="/resbilllogo.png" alt="BeyondX Logo" className="w-full h-full object-cover" />
           </div>
           <div>
-            <h1 className="text-xl font-bold text-gray-800">Restaurant POS</h1>
-            <p className="text-sm text-gray-500">Professional System</p>
+            <h1 className="text-xl font-bold text-gray-800">BeyondX POS</h1>
+            <p className="text-sm text-gray-500">Easy Billing</p>
           </div>
         </div>
       </div>
@@ -58,9 +58,9 @@ const Sidebar = () => {
       {/* Footer */}
       <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200">
         <div className="text-center">
-          <div className="flex items-center justify-center space-x-2 text-sm text-gray-500">
-            <Settings className="w-4 h-4" />
-            <span>Professional POS Solution</span>
+          <div className="text-xs text-gray-500">
+            <p>© 2014 - 2025 BeyondX Informatics Analytics Pvt Ltd</p>
+            <p>All rights reserved</p>
           </div>
         </div>
       </div>

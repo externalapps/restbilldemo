@@ -139,7 +139,7 @@ Phone: +91 9505009699
     <div className="p-6">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">POS System Quotations</h1>
+        <h1 className="text-3xl font-bold text-gray-800 mb-2">BeyondX POS System Quotations</h1>
         <p className="text-gray-600">
           Choose the perfect POS solution for your restaurant
         </p>
