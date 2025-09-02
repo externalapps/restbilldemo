@@ -48,129 +48,143 @@ const HomeDashboard = () => {
   const recentOrders = state.orders.slice(-5).reverse();
 
   return (
-    <div className="p-6">
-      {/* Welcome Header */}
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">
-          Welcome to BeyondX POS
-        </h1>
-        <p className="text-gray-600">
-          Easy Billing - Professional point of sale system for modern restaurants
-        </p>
-      </div>
+    <div 
+      className="w-full h-full relative"
+      style={{
+        backgroundImage: `url('/Dashboard.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+        minHeight: '100vh',
+        width: '100%'
+      }}
+    >
+      {/* Content */}
+      <div className="relative z-10 p-4 lg:p-6">
+        {/* Welcome Header */}
+        <div className="mb-6 lg:mb-8">
+          <h1 className="text-3xl lg:text-4xl font-bold text-white mb-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), -1px -1px 2px rgba(0,0,0,0.8), 1px -1px 2px rgba(0,0,0,0.8), -1px 1px 2px rgba(0,0,0,0.8)' }}>
+            Welcome to BeyondX POS
+          </h1>
+          <p className="text-lg lg:text-xl text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), -1px -1px 2px rgba(0,0,0,0.8), 1px -1px 2px rgba(0,0,0,0.8), -1px 1px 2px rgba(0,0,0,0.8)' }}>
+            Easy Billing - Professional point of sale system for modern restaurants
+          </p>
+        </div>
 
-      {/* Statistics Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        {stats.map((stat, index) => {
-          const Icon = stat.icon;
-          return (
-            <div key={index} className="card p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-medium text-gray-600">{stat.title}</p>
-                  <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
+        {/* Statistics Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          {stats.map((stat, index) => {
+            const Icon = stat.icon;
+            return (
+              <div key={index} className="card p-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm font-medium text-gray-600">{stat.title}</p>
+                    <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
+                  </div>
+                  <div className={`${stat.color} p-3 rounded-lg`}>
+                    <Icon className="w-6 h-6 text-white" />
+                  </div>
                 </div>
-                <div className={`${stat.color} p-3 rounded-lg`}>
-                  <Icon className="w-6 h-6 text-white" />
+                <div className="mt-4">
+                  <span className="text-sm font-medium text-green-600">{stat.change}</span>
                 </div>
               </div>
-              <div className="mt-4">
-                <span className="text-sm font-medium text-green-600">{stat.change}</span>
+            );
+          })}
+        </div>
+
+        {/* Quick Actions */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          <div className="card p-6">
+            <h3 className="text-lg font-semibold text-gray-800 mb-4">Quick Actions</h3>
+            <div className="space-y-3">
+              <button 
+                onClick={() => navigate('/billing')}
+                className="w-full btn-primary text-left flex items-center hover:bg-primary-700 transition-colors"
+              >
+                <Receipt className="w-5 h-5 mr-3" />
+                Start New Order
+              </button>
+              <button 
+                onClick={() => navigate('/kitchen')}
+                className="w-full btn-secondary text-left flex items-center hover:bg-gray-700 transition-colors"
+              >
+                <Monitor className="w-5 h-5 mr-3" />
+                View Kitchen Orders
+              </button>
+              <button 
+                onClick={() => navigate('/reports')}
+                className="w-full btn-secondary text-left flex items-center hover:bg-gray-700 transition-colors"
+              >
+                <BarChart3 className="w-5 h-5 mr-3" />
+                View Reports
+              </button>
+            </div>
+          </div>
+
+          <div className="card p-6">
+            <h3 className="text-lg font-semibold text-gray-800 mb-4">Today's Overview</h3>
+            <div className="space-y-3">
+              <div className="flex justify-between items-center">
+                <span className="text-gray-600">Date:</span>
+                <span className="font-medium">{new Date().toLocaleDateString()}</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-gray-600">Time:</span>
+                <span className="font-medium">{new Date().toLocaleTimeString()}</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-gray-600">System Status:</span>
+                <span className="text-green-600 font-medium">Online</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-gray-600">Last Sync:</span>
+                <span className="font-medium">Just now</span>
               </div>
             </div>
-          );
-        })}
-      </div>
-
-      {/* Quick Actions */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-        <div className="card p-6">
-          <h3 className="text-lg font-semibold text-gray-800 mb-4">Quick Actions</h3>
-          <div className="space-y-3">
-            <button 
-              onClick={() => navigate('/billing')}
-              className="w-full btn-primary text-left flex items-center hover:bg-primary-700 transition-colors"
-            >
-              <Receipt className="w-5 h-5 mr-3" />
-              Start New Order
-            </button>
-            <button 
-              onClick={() => navigate('/kitchen')}
-              className="w-full btn-secondary text-left flex items-center hover:bg-gray-700 transition-colors"
-            >
-              <Monitor className="w-5 h-5 mr-3" />
-              View Kitchen Orders
-            </button>
-            <button 
-              onClick={() => navigate('/reports')}
-              className="w-full btn-secondary text-left flex items-center hover:bg-gray-700 transition-colors"
-            >
-              <BarChart3 className="w-5 h-5 mr-3" />
-              View Reports
-            </button>
           </div>
         </div>
 
+        {/* Recent Orders */}
         <div className="card p-6">
-          <h3 className="text-lg font-semibold text-gray-800 mb-4">Today's Overview</h3>
-          <div className="space-y-3">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-600">Date:</span>
-              <span className="font-medium">{new Date().toLocaleDateString()}</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-gray-600">Time:</span>
-              <span className="font-medium">{new Date().toLocaleTimeString()}</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-gray-600">System Status:</span>
-              <span className="text-green-600 font-medium">Online</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-gray-600">Last Sync:</span>
-              <span className="font-medium">Just now</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Recent Orders */}
-      <div className="card p-6">
-        <h3 className="text-lg font-semibold text-gray-800 mb-4">Recent Orders</h3>
-        {recentOrders.length > 0 ? (
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-gray-200">
-                  <th className="text-left py-2 px-4 font-medium text-gray-600">Order #</th>
-                  <th className="text-left py-2 px-4 font-medium text-gray-600">Table</th>
-                  <th className="text-left py-2 px-4 font-medium text-gray-600">Items</th>
-                  <th className="text-left py-2 px-4 font-medium text-gray-600">Total</th>
-                  <th className="text-left py-2 px-4 font-medium text-gray-600">Time</th>
-                </tr>
-              </thead>
-              <tbody>
-                {recentOrders.map((order) => (
-                  <tr key={order.id} className="border-b border-gray-100">
-                    <td className="py-2 px-4 font-medium">#{order.id}</td>
-                    <td className="py-2 px-4">Table {order.tableNo}</td>
-                    <td className="py-2 px-4">{order.items.length} items</td>
-                    <td className="py-2 px-4 font-medium">₹{order.total}</td>
-                    <td className="py-2 px-4 text-sm text-gray-500">
-                      {new Date(order.timestamp).toLocaleTimeString()}
-                    </td>
+          <h3 className="text-lg font-semibold text-gray-800 mb-4">Recent Orders</h3>
+          {recentOrders.length > 0 ? (
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-gray-200">
+                    <th className="text-left py-2 px-4 font-medium text-gray-600">Order #</th>
+                    <th className="text-left py-2 px-4 font-medium text-gray-600">Table</th>
+                    <th className="text-left py-2 px-4 font-medium text-gray-600">Items</th>
+                    <th className="text-left py-2 px-4 font-medium text-gray-600">Total</th>
+                    <th className="text-left py-2 px-4 font-medium text-gray-600">Time</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        ) : (
-          <div className="text-center py-8 text-gray-500">
-            <Receipt className="w-12 h-12 mx-auto mb-3 text-gray-300" />
-            <p>No orders yet today</p>
-            <p className="text-sm">Start by creating a new order</p>
-          </div>
-        )}
+                </thead>
+                <tbody>
+                  {recentOrders.map((order) => (
+                    <tr key={order.id} className="border-b border-gray-100">
+                      <td className="py-2 px-4 font-medium">#{order.id}</td>
+                      <td className="py-2 px-4">Table {order.tableNo}</td>
+                      <td className="py-2 px-4">{order.items.length} items</td>
+                      <td className="py-2 px-4 font-medium">₹{order.total}</td>
+                      <td className="py-2 px-4 text-sm text-gray-500">
+                        {new Date(order.timestamp).toLocaleTimeString()}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <div className="text-center py-8 text-gray-500">
+              <Receipt className="w-12 h-12 mx-auto mb-3 text-gray-300" />
+              <p>No orders yet today</p>
+              <p className="text-sm">Start by creating a new order</p>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

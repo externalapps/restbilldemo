@@ -136,14 +136,29 @@ Phone: +91 9505009699
   };
 
   return (
-    <div className="p-6">
-      {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">BeyondX POS System Quotations</h1>
-        <p className="text-gray-600">
-          Choose the perfect POS solution for your restaurant
-        </p>
-      </div>
+    <div 
+      className="w-full h-full relative"
+      style={{
+        backgroundImage: `url('/Home.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+        minHeight: '100vh',
+        width: '100%'
+      }}
+    >
+      {/* Content */}
+      <div className="relative z-10 p-4 lg:p-6">
+        {/* Header */}
+        <div className="mb-6 lg:mb-8">
+          <h1 className="text-3xl lg:text-4xl font-bold text-white mb-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), -1px -1px 2px rgba(0,0,0,0.8), 1px -1px 2px rgba(0,0,0,0.8), -1px 1px 2px rgba(0,0,0,0.8)' }}>
+            BeyondX POS System Quotations
+          </h1>
+          <p className="text-lg lg:text-xl text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), -1px -1px 2px rgba(0,0,0,0.8), 1px -1px 2px rgba(0,0,0,0.8), -1px 1px 2px rgba(0,0,0,0.8)' }}>
+            Choose the perfect POS solution for your restaurant
+          </p>
+        </div>
 
       {/* Comparative Study */}
       <div className="card p-6 mb-8 bg-green-50 border-green-200">
@@ -639,7 +654,18 @@ Phone: +91 9505009699
             </form>
           </div>
         </div>
-      )}
+              )}
+        
+        {/* Receipt Paper Information */}
+        <div className="mt-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+          <h4 className="font-semibold text-yellow-800 mb-2">⚠️ Important Note About Receipt Paper</h4>
+          <div className="text-sm text-yellow-700">
+            <p className="mb-2"><strong>Basic Plan:</strong> Receipt paper is NOT included. Clients must purchase thermal paper rolls separately.</p>
+            <p className="mb-2"><strong>Professional & Enterprise Plans:</strong> Receipt paper supply is INCLUDED in the package.</p>
+            <p><strong>Why this matters:</strong> Receipt paper is a recurring cost that can add ₹2,000-₹3,000+ to your total investment if not included.</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

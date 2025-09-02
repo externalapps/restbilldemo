@@ -236,12 +236,29 @@ const ReportsPage = () => {
   );
 
   return (
-    <div className="p-6">
-      {/* Header */}
-      <div className="mb-6">
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">Reports & Analytics</h1>
-        <p className="text-gray-600">Monitor your restaurant's performance and insights</p>
-      </div>
+    <div 
+      className="w-full h-full relative"
+      style={{
+        backgroundImage: `url('/Home.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+        minHeight: '100vh',
+        width: '100%'
+      }}
+    >
+      {/* Content */}
+      <div className="relative z-10 p-4 lg:p-6">
+        {/* Header */}
+        <div className="mb-6 lg:mb-8">
+          <h1 className="text-3xl lg:text-4xl font-bold text-white mb-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), -1px -1px 2px rgba(0,0,0,0.8), 1px -1px 2px rgba(0,0,0,0.8), -1px 1px 2px rgba(0,0,0,0.8)' }}>
+            Reports & Analytics
+          </h1>
+          <p className="text-lg lg:text-xl text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), -1px -1px 2px rgba(0,0,0,0.8), 1px -1px 2px rgba(0,0,0,0.8), -1px 1px 2px rgba(0,0,0,0.8)' }}>
+            Comprehensive insights into your restaurant performance
+          </p>
+        </div>
 
       {/* Report Controls */}
       <div className="card p-6 mb-6">
@@ -294,6 +311,7 @@ const ReportsPage = () => {
           <p className="mt-1">Data is updated in real-time from your POS system</p>
         </div>
       </div>
+    </div>
     </div>
   );
 };

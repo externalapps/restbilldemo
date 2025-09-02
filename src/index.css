@@ -6,6 +6,11 @@
   body {
     @apply bg-gray-50 text-gray-900;
   }
+  
+  /* Ensure proper scrolling on mobile */
+  html, body {
+    @apply overflow-x-hidden;
+  }
 }
 
 @layer components {
@@ -22,11 +27,15 @@
   }
   
   .sidebar-item {
-    @apply flex items-center px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-colors duration-200 cursor-pointer;
+    @apply flex items-center px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-all duration-200 cursor-pointer relative;
   }
   
   .sidebar-item.active {
     @apply bg-primary-100 text-primary-700;
+  }
+  
+  .sidebar-item:hover {
+    @apply transform translate-x-1;
   }
   
   .menu-category {
@@ -39,5 +48,56 @@
   
   .receipt {
     @apply font-mono text-sm bg-white p-4 border border-gray-300 rounded-lg max-w-xs mx-auto;
+  }
+  
+  /* Mobile responsive utilities */
+  .mobile-container {
+    @apply px-4 lg:px-6;
+  }
+  
+  .mobile-text {
+    @apply text-sm lg:text-base;
+  }
+  
+  .mobile-heading {
+    @apply text-xl lg:text-2xl font-bold;
+  }
+  
+  .mobile-card {
+    @apply p-4 lg:p-6;
+  }
+  
+  /* Smooth transitions */
+  .transition-sidebar {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  /* Mobile overlay */
+  .mobile-overlay {
+    @apply fixed inset-0 bg-black bg-opacity-50 z-20 lg:hidden;
+  }
+  
+  /* Responsive grid */
+  .responsive-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6;
+  }
+  
+  /* Mobile-friendly buttons */
+  .mobile-btn {
+    @apply w-full sm:w-auto px-4 py-2 text-sm lg:text-base;
+  }
+  
+  /* Mobile-friendly tables */
+  .mobile-table {
+    @apply overflow-x-auto;
+  }
+  
+  .mobile-table table {
+    @apply min-w-full text-sm;
+  }
+  
+  .mobile-table th,
+  .mobile-table td {
+    @apply px-2 py-2 lg:px-4 lg:py-3;
   }
 }

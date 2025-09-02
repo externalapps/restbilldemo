@@ -70,12 +70,13 @@ export const quotationPlans = [
         amazonLink: 'https://www.amazon.in/Rugtek-CR410-B/dp/B08FRF2CMF?utm_source=chatgpt.com',
         description: 'Secure cash drawer for restaurant operations'
       }
+      // Note: Receipt Paper NOT included in Basic Plan - clients purchase separately
     ],
     hardwareTotal: '₹35,197',
     software: ['Billing System', 'Menu Management', 'Receipt Printing', 'GST Calculation', 'Daily Sales Reports'],
     cost: '75,000',
     totalCost: '₹1,10,197',
-    description: 'Perfect for small restaurants and cafes starting their digital journey'
+    description: 'Perfect for small restaurants and cafes starting their digital journey. Note: Receipt paper sold separately.'
   },
   {
     id: 'medium',
@@ -111,14 +112,14 @@ export const quotationPlans = [
         specs: 'Thermal paper rolls (80mm, 50 rolls)',
         compatibility: 'Perfect fit for our thermal printers',
         amazonLink: 'https://www.amazon.in/s?k=thermal+paper+roll+80mm',
-        description: 'High-quality thermal paper for clear receipts'
+        description: 'High-quality thermal paper for clear receipts (INCLUDED in this plan)'
       }
     ],
     hardwareTotal: '₹47,197',
     software: ['Billing System', 'Menu Management', 'Table Selection', 'Receipt Printing', 'GST Calculation', 'Kitchen Orders Display', 'Daily Sales Reports', 'Menu Item Add/Edit/Delete', 'Order History'],
     cost: '1,25,000',
     totalCost: '₹1,72,197',
-    description: 'Ideal for growing restaurants with multiple tables and staff'
+    description: 'Ideal for growing restaurants with multiple tables and staff. Includes receipt paper supply.'
   },
   {
     id: 'high',
@@ -162,7 +163,7 @@ export const quotationPlans = [
         specs: 'Thermal paper rolls (80mm, 100 rolls)',
         compatibility: 'Perfect fit for our thermal printers',
         amazonLink: 'https://www.amazon.in/s?k=thermal+paper+roll+80mm',
-        description: 'Bulk thermal paper supply for enterprise operations'
+        description: 'Bulk thermal paper supply for enterprise operations (INCLUDED in this plan)'
       },
       {
         name: 'Network Equipment – D-Link R03 Wireless Router',
@@ -177,6 +178,6 @@ export const quotationPlans = [
     software: ['Billing System', 'Menu Management', 'Table Selection', 'Receipt Printing', 'GST Calculation', 'Kitchen Orders Display', 'Daily Sales Reports', 'Menu Item Add/Edit/Delete', 'Order History', 'Analytics & Projections'],
     cost: '2,50,000',
     totalCost: '₹3,23,996',
-    description: 'For large restaurants, chains, and fine dining establishments'
+    description: 'For large restaurants, chains, and fine dining establishments. Includes receipt paper supply.'
   }
 ];

@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AppProvider } from './context/AppContext';
+import Home from './components/Home';
 import Sidebar from './components/Sidebar';
 import HomeDashboard from './components/HomeDashboard';
 import BillingModule from './components/BillingModule';
@@ -12,31 +13,60 @@ function App() {
   return (
     <AppProvider>
       <Router>
-        <div className="flex h-screen bg-gray-50">
-          {/* Sidebar */}
-          <Sidebar />
+        <Routes>
+          {/* Home Page - No Sidebar */}
+          <Route path="/" element={<Home />} />
           
-          {/* Main Content */}
-          <div className="flex-1 ml-64 overflow-auto flex flex-col">
-            <div className="flex-1">
-              <Routes>
-                <Route path="/" element={<HomeDashboard />} />
-                <Route path="/billing" element={<BillingModule />} />
-                <Route path="/quotations" element={<QuotationsPage />} />
-                <Route path="/kitchen" element={<KitchenDisplay />} />
-                <Route path="/reports" element={<ReportsPage />} />
-              </Routes>
-            </div>
-            
-            {/* Main Footer */}
-            <footer className="bg-white border-t border-gray-200 py-4 px-6 text-center">
-              <div className="text-sm text-gray-600">
-                <p>© 2014 - 2025 BeyondX Informatics Analytics Pvt Ltd. All rights reserved.</p>
-                <p className="mt-1">BeyondX POS Easy Billing - Professional Restaurant Management Solution</p>
+          {/* Dashboard and other pages - With Sidebar */}
+          <Route path="/dashboard" element={
+            <div className="flex h-screen">
+              <Sidebar />
+              <div className="flex-1 ml-24 overflow-auto">
+                <HomeDashboard />
               </div>
-            </footer>
-          </div>
-        </div>
+            </div>
+          } />
+          
+          {/* Billing Module */}
+          <Route path="/billing" element={
+            <div className="flex h-screen">
+              <Sidebar />
+              <div className="flex-1 ml-24 overflow-auto">
+                <BillingModule />
+              </div>
+            </div>
+          } />
+          
+          {/* Kitchen Display */}
+          <Route path="/kitchen" element={
+            <div className="flex h-screen">
+              <Sidebar />
+              <div className="flex-1 ml-24 overflow-auto">
+                <KitchenDisplay />
+              </div>
+            </div>
+          } />
+          
+          {/* Quotations Page */}
+          <Route path="/quotations" element={
+            <div className="flex h-screen">
+              <Sidebar />
+              <div className="flex-1 ml-24 overflow-auto">
+                <QuotationsPage />
+              </div>
+            </div>
+          } />
+          
+          {/* Reports Page */}
+          <Route path="/reports" element={
+            <div className="flex h-screen">
+              <Sidebar />
+              <div className="flex-1 ml-24 overflow-auto">
+                <ReportsPage />
+              </div>
+            </div>
+          } />
+        </Routes>
       </Router>
     </AppProvider>
   );

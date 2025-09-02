@@ -1,61 +1,111 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { 
   Home, 
   Receipt, 
   FileText, 
   Monitor, 
-  BarChart3,
-  Settings
+  BarChart3
 } from 'lucide-react';
 
 const Sidebar = () => {
-  const navItems = [
-    { path: '/', icon: Home, label: 'Dashboard' },
-    { path: '/billing', icon: Receipt, label: 'Billing & Menu' },
-    { path: '/kitchen', icon: Monitor, label: 'Kitchen Display' },
-    { path: '/reports', icon: BarChart3, label: 'Reports' },
-    { path: '/quotations', icon: FileText, label: 'Quotations' }
-  ];
+  const navigate = useNavigate();
+
+  const handleLogoClick = () => {
+    navigate('/');
+  };
 
   return (
-    <div className="bg-white shadow-lg w-64 min-h-screen fixed left-0 top-0 z-10">
-      {/* Logo/Brand */}
-      <div className="p-6 border-b border-gray-200">
-        <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-lg flex items-center justify-center overflow-hidden">
-            <img src="/resbilllogo.png" alt="BeyondX Logo" className="w-full h-full object-cover" />
-          </div>
-          <div>
-            <h1 className="text-xl font-bold text-gray-800">BeyondX POS</h1>
-            <p className="text-sm text-gray-500">Easy Billing</p>
-          </div>
-        </div>
+    <div className="fixed left-0 top-0 h-full w-24 bg-white border-r border-gray-200 shadow-lg z-50">
+      {/* Logo */}
+      <div className="p-4 border-b border-gray-200">
+        <button
+          onClick={handleLogoClick}
+          className="w-12 h-12 rounded-lg flex items-center justify-center overflow-hidden hover:bg-gray-100 transition-colors cursor-pointer"
+        >
+          <img src="/resbilllogo.png" alt="BeyondX Logo" className="w-full h-full object-cover" />
+        </button>
       </div>
 
       {/* Navigation */}
-      <nav className="p-4">
-        <ul className="space-y-2">
-          {navItems.map((item) => {
-            const Icon = item.icon;
-            return (
-              <li key={item.path}>
-                <NavLink
-                  to={item.path}
-                  className={({ isActive }) =>
-                    `sidebar-item ${isActive ? 'active' : ''}`
-                  }
-                >
-                  <Icon className="w-5 h-5" />
-                  <span>{item.label}</span>
-                </NavLink>
-              </li>
-            );
-          })}
-        </ul>
+      <nav className="p-4 space-y-4">
+        <NavLink
+          to="/dashboard"
+          className={({ isActive }) =>
+            `flex flex-col items-center p-3 rounded-lg transition-colors ${
+              isActive
+                ? 'bg-orange-100 text-orange-600 border-r-2 border-orange-500'
+                : 'text-gray-600 hover:bg-gray-100 hover:text-gray-800'
+            }`
+          }
+        >
+          <Home className="w-6 h-6 mb-1" />
+          <span className="text-xs font-medium">Dashboard</span>
+        </NavLink>
+
+        <NavLink
+          to="/billing"
+          className={({ isActive }) =>
+            `flex flex-col items-center p-3 rounded-lg transition-colors ${
+              isActive
+                ? 'bg-orange-100 text-orange-600 border-r-2 border-orange-500'
+                : 'text-gray-600 hover:bg-gray-100 hover:text-gray-800'
+            }`
+          }
+        >
+          <Receipt className="w-6 h-6 mb-1" />
+          <span className="text-xs font-medium">Billing</span>
+        </NavLink>
+
+        <NavLink
+          to="/kitchen"
+          className={({ isActive }) =>
+            `flex flex-col items-center p-3 rounded-lg transition-colors ${
+              isActive
+                ? 'bg-orange-100 text-orange-600 border-r-2 border-orange-500'
+                : 'text-gray-600 hover:bg-gray-100 hover:text-gray-800'
+            }`
+          }
+        >
+          <Monitor className="w-6 h-6 mb-1" />
+          <span className="text-xs font-medium">Kitchen</span>
+        </NavLink>
+
+        <NavLink
+          to="/reports"
+          className={({ isActive }) =>
+            `flex flex-col items-center p-3 rounded-lg transition-colors ${
+              isActive
+                ? 'bg-orange-100 text-orange-600 border-r-2 border-orange-500'
+                : 'text-gray-600 hover:bg-gray-100 hover:text-gray-800'
+            }`
+          }
+        >
+          <BarChart3 className="w-6 h-6 mb-1" />
+          <span className="text-xs font-medium">Reports</span>
+        </NavLink>
+
+        <NavLink
+          to="/quotations"
+          className={({ isActive }) =>
+            `flex flex-col items-center p-3 rounded-lg transition-colors ${
+              isActive
+                ? 'bg-orange-100 text-orange-600 border-r-2 border-orange-500'
+                : 'text-gray-600 hover:bg-gray-100 hover:text-gray-800'
+            }`
+          }
+        >
+          <FileText className="w-6 h-6 mb-1" />
+          <span className="text-xs font-medium">Quotations</span>
+        </NavLink>
       </nav>
 
-
+      {/* Brand Name */}
+      <div className="absolute bottom-4 left-0 right-0 text-center">
+        <div className="text-xs font-bold text-gray-800 mb-1">BeyondX</div>
+        <div className="text-xs text-gray-600">POS</div>
+        <div className="text-xs text-gray-500 mt-1">Easy Billing</div>
+      </div>
     </div>
   );
 };
