@@ -625,10 +625,10 @@ Professional POS Solution
       <div className="relative z-10 p-4 lg:p-6">
         {/* Header */}
         <div className="mb-4 lg:mb-6">
-          <h1 className="text-3xl lg:text-4xl font-bold text-white mb-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), -1px -1px 2px rgba(0,0,0,0.8), 1px -1px 2px rgba(0,0,0,0.8), -1px 1px 2px rgba(0,0,0,0.8)' }}>
+          <h1 className="text-3xl lg:text-4xl font-bold text-white mb-2 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8), -0.5px -0.5px 1px rgba(0,0,0,0.8), 0.5px -0.5px 1px rgba(0,0,0,0.8), -0.5px 0.5px 1px rgba(0,0,0,0.8)' }}>
             Billing & Menu Management
           </h1>
-          <p className="text-lg lg:text-xl text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), -1px -1px 2px rgba(0,0,0,0.8), 1px -1px 2px rgba(0,0,0,0.8), -1px 1px 2px rgba(0,0,0,0.8)' }}>
+          <p className="text-lg lg:text-xl text-white font-medium drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8), -0.5px -0.5px 1px rgba(0,0,0,0.8), 0.5px -0.5px 1px rgba(0,0,0,0.8), -0.5px 0.5px 1px rgba(0,0,0,0.8)' }}>
             Create orders, generate bills, and manage your menu
           </p>
         </div>

@@ -69,13 +69,20 @@ export const quotationPlans = [
         compatibility: 'Seamlessly integrated with thermal printer',
         amazonLink: 'https://www.amazon.in/Rugtek-CR410-B/dp/B08FRF2CMF?utm_source=chatgpt.com',
         description: 'Secure cash drawer for restaurant operations'
+      },
+      {
+        name: 'Receipt Paper – Generic Thermal Paper Roll',
+        price: '₹2,000',
+        specs: 'Thermal paper rolls (80mm, 50 rolls)',
+        compatibility: 'Perfect fit for our thermal printers',
+        amazonLink: 'https://www.amazon.in/s?k=thermal+paper+roll+80mm',
+        description: 'High-quality thermal paper for clear receipts (NOT included - purchase separately)'
       }
-      // Note: Receipt Paper NOT included in Basic Plan - clients purchase separately
     ],
-    hardwareTotal: '₹35,197',
+    hardwareTotal: '₹37,197',
     software: ['Billing System', 'Menu Management', 'Receipt Printing', 'GST Calculation', 'Daily Sales Reports'],
     cost: '75,000',
-    totalCost: '₹1,10,197',
+    totalCost: '₹1,12,197',
     description: 'Perfect for small restaurants and cafes starting their digital journey. Note: Receipt paper sold separately.'
   },
   {
